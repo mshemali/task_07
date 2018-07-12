@@ -7,7 +7,14 @@
     <body>
         {% for restaurant in restaurants %}
             <a href="{% url 'restaurant-detail' restaurant.id %}">
+                
                 <ul>
+                        <li>
+                                <a href="{% url 'restaurant-delete' restaurant_id=restaurant.id %}">Delete</a>
+                            </li>
+                            <li>
+                                    <a href="{% url 'restaurant-update' restaurant_id=restaurant.id %}">Update</a>
+                                </li>
                     <li>{{restaurant.name}}</li>
                     <li>{{restaurant.description}}</li>
                     <li>{{restaurant.opening_time}}</li>
